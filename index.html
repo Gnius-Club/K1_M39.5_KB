@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 39.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 39.5: ¡La Gran Exhibición del CODE SQUAD!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Kinderbot y 10 iBricks por cada pareja. Kinderbots cargados. Opcional: Papel y crayones para planificar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡El Gran Día de la Exhibición! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Generar entusiasmo por la actividad final, donde mostrarán todo lo aprendido.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda con mucha emoción, anunciando la Gran Exhibición.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Extra, extra! ¡Atención, genios inventores, exploradores intrépidos, programadores estrella del CODE SQUAD! ¡Hoy es un día SÚPER ESPECIAL! ¡Después de tantas misiones increíbles, ha llegado el momento de... ¡LA GRAN EXHIBICIÓN DEL CODE SQUAD! ¡Hoy van a mostrar sus creaciones más fantásticas!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que necesitan la máxima energía creativa y de concentración para su proyecto final.</td>
+                <td>
+                     <div class="dialogue">
+                        "Para crear el mejor proyecto de la exhibición, ¡necesitamos toda nuestra energía Gnius activada! ¡Imaginación al máximo, concentración de súper espía y trabajo en equipo de campeones! ¡Vamos al Gimnasio Cerebral para un último calentamiento antes de empezar a crear nuestras obras maestras!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar con un baile final, recordando todos los tipos de movimientos aprendidos.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile como una celebración, quizás un "freestyle" donde recuerden pasos de misiones anteriores.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD, a celebrar todo lo aprendido con un último Baile de Algoritmos! ¡Recuerden todos los movimientos que le hemos enseñado a Kinderbot! ¡Adelante, atrás, giros, secuencias largas! ¡Sigan la música y hagan sus mejores pasos de programador! ¡Que se vea esa energía de la Gran Exhibición!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del "Problema" - ¡A Crear para la Exhibición! -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">💡 Actividad 3: ¡El Reto Final: Crear y Mostrar! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Explicar el reto de la clase: diseñar y preparar un pequeño proyecto propio para presentar, usando Kinderbot y iBricks.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Explica que el "problema" de hoy es demostrar lo geniales que son creando algo propio.</td>
+                <td>
+                     <div class="dialogue">
+                        "Muy bien, genios creadores. Hoy no hay un problema que resolver... ¡el reto es CREAR! ¡Demostrar todo lo que han aprendido! La Gran Exhibición necesita sus inventos. ¿Qué van a presentar? ¡Piensen en todas las misiones que hicimos!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Muestra ejemplos de *tipos* de proyectos que podrían hacer (un circuito simple, un patrón, una interacción con una estructura, una mini-historia, un baile) y explica el reto final: elegir, diseñar, construir y programar.</td>
+                <td>
+                     <div class="dialogue">
+                        "Pueden inspirarse en nuestras aventuras: ¿Quizás quieren diseñar un **circuito** nuevo para Kinderbot, con curvas o una sorpresa? ¿O inventar un **patrón** secreto con los bloques? ¿O construir una **torre** o **criatura** y programar a Kinderbot para que interactúe con ella? ¿O contar una **mini-historia** con una elección? ¡O incluso crear un **baile** especial para Kinderbot! La misión es: 1. Elegir qué tipo de proyecto quieren hacer. 2. Diseñarlo y construirlo con los bloques. 3. Programar a Kinderbot (¡con hasta 8 pasos!) para que haga lo que planearon. 4. ¡Prepararse para mostrarlo a todos! ¿Listos para el desafío final?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Equipos de Exhibición! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar las parejas finales para colaborar en su proyecto de exhibición.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que los mejores inventos se hacen en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Creadores! ¡Para la Gran Exhibición, trabajaremos en nuestros súper equipos! ¡Dos cabezas piensan y crean mejor que una! ¡Juntos pueden tener ideas más geniales, construir más rápido y ayudarse a programar! ¡Formen sus Equipos de Exhibición Gnius! ¡Busquen a su compañero inventor para este último gran proyecto!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a discutir y elegir rápidamente qué tipo de proyecto harán.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Equipos listos? ¡Fantástico! Ahora, ¡la primera gran decisión! Hablen rápido: ¿Qué van a crear para la exhibición? ¿Un circuito? ¿Un patrón? ¿Una criatura con baile? ¿Una historia? ¿Un baile solo? ¡Elijan su proyecto! ¡Cuando lo tengan decidido, levanten la mano!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación/Creación - ¡Manos a la Obra! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-creacion')">
+        <div class="title">⌨️ Actividad 5: ¡Creando Nuestra Obra Maestra! ⏰ Tiempo: 15 minutos</div>
+        <div class="subtitle">Objetivo: Diseñar, construir con iBricks y programar con Kinderbot el proyecto elegido por cada pareja, aplicando habilidades aprendidas.</div>
+    </div>
+    <div id="reto-creacion" class="content">
+        <table>
+            <!-- Paso único con guía diferenciada por nivel -->
+             <tr>
+                <td><strong>PASO 1 (15 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Tiempo de Crear!". Los equipos trabajan en su proyecto. El profesor circula, ayuda, guía y anima según el nivel.
+                    <ul>
+                        <li>**K1:** Enfocarse en una construcción simple y una secuencia clara de 4-6 pasos. Ayudarles a recordar botones y orden.</li>
+                        <li>**K2:** Animar a construcciones un poco más elaboradas o secuencias de 6-8 pasos. Preguntar "¿Qué quieres que haga después?".</li>
+                        <li>**K3:** Fomentar proyectos que combinen ideas (ej. patrón en un circuito). Animar a usar 8 pasos y a planificar/depurar. Preguntar "¿Cómo lo planeaste? ¿Qué harás si no funciona?".</li>
+                    </ul>
+                </td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Adelante, Equipos de Exhibición! ¡Es su momento de brillar! ¡Usen los bloques para construir su idea y programen a Kinderbot para darle vida! Recuerden todo lo que aprendimos: avanzar, girar, seguir patrones, esquivar, tomar decisiones... ¡Pueden usar hasta 8 pasos en su código! ¡Trabajen juntos, ayúdense y diviértanse creando! ¡Si necesitan ayuda o ideas, levanten la mano! ¡Estoy aquí para apoyarlos! ¡Quiero ver esas creaciones asombrosas!" (Circular y asistir individualmente).
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡La Gran Presentación! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('presentacion')">
+        <div class="title">🚀 Actividad 6: ¡Presentando Nuestros Proyectos! ⏰ Tiempo: 10 minutos</div>
+        <div class="subtitle">Objetivo: Que cada pareja presente brevemente su proyecto y ejecute el programa de Kinderbot. Fomentar la comunicación y el reconocimiento entre pares.</div>
+    </div>
+    <div id="presentacion" class="content">
+        <table>
+             <tr>
+                <td><strong>PASO 1 (10 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "¡La Alfombra Roja!". Cada pareja, por turno, va a un espacio designado ("el escenario"). Explican brevemente qué hicieron (adaptado al nivel) y presionan 'Go' para mostrar su proyecto en acción. Animar a los demás a aplaudir.
+                    <ul>
+                        <li>**K1:** "¿Qué construyeron? ¿Qué hace Kinderbot?" (Corre el programa).</li>
+                        <li>**K2:** "¿Cuál fue su idea? ¿Qué pasos le dieron a Kinderbot?" (Corre el programa).</li>
+                        <li>**K3:** "¿Qué crearon? ¿Cómo planearon el código? ¿Tuvieron algún problema?" (Corre el programa).</li>
+                    </ul>
+                </td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Atención, atención! ¡Se abre el telón de la Gran Exhibición del CODE SQUAD! ¡Vamos a ver las maravillosas creaciones de cada equipo! Por turnos, cada pareja vendrá aquí al frente, nos contará un poquito qué inventó y luego... ¡presionará 'Go' para que veamos a Kinderbot en acción! ¡Preparemos nuestros aplausos para todos los equipos! ¡Equipo [Nombre/Número], pasen al escenario!" (Llamar a cada equipo, facilitar la breve explicación y la demostración. Fomentar aplausos y comentarios positivos).
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7: Mensaje del Cuartel (Omitida para Misión 39.5) -->
+
+<!-- Actividad 8: Conclusión y Reflexión Final -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Celebración Final y Hasta Pronto! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar todos los proyectos y el aprendizaje logrado a lo largo de todas las misiones. Recapitular habilidades clave.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "¡Misión Cumplida y Graduación Gnius!". Felicita a todos por sus increíbles proyectos y por todo lo aprendido. Recapitula brevemente las habilidades desarrolladas.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡¡¡BRIIIIIIILLANTE!!! ¡CODE SQUAD, estoy SIN PALABRAS! ¡Sus proyectos para la Gran Exhibición han sido absolutamente FANTÁSTICOS! ¡Han demostrado ser unos creadores, constructores y programadores increíbles! ¡Hoy celebramos todo lo que han aprendido en nuestras misiones con Kinderbot y los bloques! Aprendieron a:
+                        *   Dar instrucciones paso a paso (¡Secuencias!).
+                        *   Hacer que Kinderbot gire y cambie de dirección.
+                        *   Encontrar y crear patrones secretos.
+                        *   Programar decisiones y reacciones diferentes.
+                        *   Esquivar obstáculos y resolver problemas.
+                        *   ¡Y lo más importante: a trabajar en equipo y a usar su maravillosa imaginación!
+                        ¡Estoy súper orgulloso de cada uno de ustedes! ¡Son oficialmente Graduados Gnius de Kinderbot! ¡Un aplauso GIGANTE para todos! ¡Gracias por estas misiones tan divertidas! ¡Hasta la próxima aventura!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active');
+        } else {
+            content.style.display = "block";
+            parentActivity.classList.add('active');
+        }
+    }
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             el.style.display = 'table-row';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
